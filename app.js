@@ -1419,4 +1419,90 @@ player.ready(()=>{ setupQualityUI(); buildAudioMenu(); buildCCMenu(); reflectPiP
   window.clearFavsCustom = function(){ return drop(getCustomUrls()); };
   window.clearFavsChannels = function(){ return drop(getChannelUrls()); };
 })();
+(function () {
+  function setupCreditChipDrag() {
+    const chip = document.getElementById('creditChip');
+    if (!chip || chip.dataset.dragReady === '1') return; // évite double init
+    chip.dataset.dragReady = '1';
+
+    chip.classList.add('interactive'); // s'assure que le chip est interactif
+
+    let dragging = false;
+    let startX = 0, startY = 0;
+    let startLeft = 0, startTop = 0;
+    let rect0 = null;
+
+    const getPoint = (e) => {
+      if (e.touches && e.touches[0]) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      return { x: e.clientX, y: e.clientY };
+    };
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+    const onStart = (e) => {
+      const { x, y } = getPoint(e);
+      rect0 = chip.getBoundingClientRect();
+      startX = x; startY = y;
+      startLeft = rect0.left; startTop = rect0.top;
+
+      chip.style.position = 'fixed';
+      chip.style.left = `${startLeft}px`;
+      chip.style.top = `${startTop}px`;
+      chip.style.right = 'auto';
+      chip.style.bottom = 'auto';
+
+      dragging = true;
+      chip.classList.add('is-dragging');
+      if (e.cancelable) e.preventDefault();
+    };
+
+    const onMove = (e) => {
+      if (!dragging) return;
+      const { x, y } = getPoint(e);
+      const dx = x - startX;
+      const dy = y - startY;
+
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const w = rect0.width;
+      const h = rect0.height;
+
+      const nextLeft = clamp(startLeft + dx, 0, vw - w);
+      const nextTop  = clamp(startTop  + dy, 0, vh - h);
+
+      chip.style.left = `${nextLeft}px`;
+      chip.style.top  = `${nextTop}px`;
+
+      if (e.cancelable) e.preventDefault();
+    };
+
+    const onEnd = () => {
+      if (!dragging) return;
+      dragging = false;
+      chip.classList.remove('is-dragging');
+      // Aucun stockage : retour à la position CSS d'origine au reload.
+    };
+
+    // Souris
+    chip.addEventListener('mousedown', onStart);
+    window.addEventListener('mousemove', onMove, { passive: false });
+    window.addEventListener('mouseup', onEnd);
+
+    // Tactile
+    chip.addEventListener('touchstart', onStart, { passive: false });
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onEnd);
+    window.addEventListener('touchcancel', onEnd);
+
+    // Sécurité
+    window.addEventListener('resize', onEnd);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupCreditChipDrag, { once: true });
+  } else {
+    setupCreditChipDrag();
+  }
+})();
+
+
 // ===========================================================================
