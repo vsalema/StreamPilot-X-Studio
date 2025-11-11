@@ -487,9 +487,12 @@ samples.forEach(s => {
 });
 
 const overlayLinks = [
-  { label: 'Cmtv',   url: '//popcdn.day/cdn.php?stream=CMTVPT' },
   { label: 'TVPT4',  url: 'https://vsalema.github.io/tvpt4/' },
-  { label: 'CMTV',url: 'https://vsalema.github.io/newplayer-prox-final-fixed/' },
+  { label: 'Tous-les-film',url: 'https://vsalema.github.io/Tous-les-film/' },
+  { label: 'Ancien-Film',url: 'https://vsalema.github.io/Ancien-Film/' },
+  { label: 'Superhero',url: 'https://vsalema.github.io/Superhero/' },
+  { label: 'Studio-ghibli',url: 'https://vsalema.github.io/Studio-ghibli/' },
+  { label: 'Dreamworks',url: 'https://vsalema.github.io/Dreamworks/' },
   { label: 'Disney-pixar',   url: 'https://vsalema.github.io/Disney-pixar/' }
 ];
 (function addOverlayButtons(){
