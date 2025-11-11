@@ -15,23 +15,20 @@
     { title: "CANAL+",  logo: "https://1000logos.net/wp-content/uploads/2023/03/Canal-Logo-1984-768x432.png", type: "overlay", url: "//popcdn.day/go.php?stream=CANALPLFR" },
     { title: "CANAL+F", logo: "https://upload.wikimedia.org/wikipedia/fr/3/3b/C%2B_Foot.png", type: "overlay", url: "//popcdn.day/go.php?stream=FOOTPLUSFR" },
     { title: "RMC Sp",  logo: "https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_ce1754f94a887510.png", type: "overlay", url: "https://popcdn.day/go.php?stream=RMCSPORT1FR" },
-    
     { title: "BTV", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/BTV_Black.svg", type: "overlay", url: "//popcdn.day/go.php?stream=BTV1" },
     { title: "SCP", logo: "https://pplware.sapo.pt/wp-content/uploads/2017/06/scp_00.jpg", type: "overlay", url: "//popcdn.day/go.php?stream=SPT1" },
     { title: "11",  logo: "https://www.zupimages.net/up/24/13/qj99.jpg", type: "overlay", url: "https://popcdn.day/go.php?stream=Canal11" },
-    { title: "BOLA", logo: "https://www.telesatellite.com/images/actu/a/abolatv.jpg", type: "overlay", url: "//popcdn.day/go.php?stream=ABOLA'" },
+    { title: "BOLA", logo: "https://www.telesatellite.com/images/actu/a/abolatv.jpg", type: "overlay", url: "//popcdn.day/go.php?stream=ABOLA" },
     { title: "Sport tv 1",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT1" },
     { title: "Sport tv 2",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT2" },
     { title: "Sport tv 3",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT3" },
     { title: "Sport tv 4",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT4" },
     { title: "Sport tv 5",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT5" },
-    
     { title: "DAZN 1 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN1" },
     { title: "DAZN 2 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN2" },
     { title: "DAZN 3 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN3" },
     { title: "DAZN 4 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN4" },
-    { title: "DAZN 5 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN5" },
-    
+    { title: "DAZN 5 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN5" }
   ];
 
   function $(id){ return document.getElementById(id); }
