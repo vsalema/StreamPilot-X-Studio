@@ -905,3 +905,10 @@ details[open] .summary .caret{transform:rotate(90deg)}
   window.addEventListener('resize', onEnd);
 })();
 
+
+/* SPX Poster (Option 1) */
+.video-js .vjs-poster{
+  background-size: contain !important;
+  background-position: center !important;
+  background-color: #0b1020 !important;
+}

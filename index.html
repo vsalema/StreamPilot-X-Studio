@@ -7,6 +7,12 @@
   <link href="https://vsalema.github.io/tvpt4/css/fileLabel.css" rel="stylesheet" />
   <link href="https://unpkg.com/video.js@8/dist/video-js.css" rel="stylesheet" />
   <link href="./styles.css" rel="stylesheet" />
+<style>
+#player.video-js {
+ background: var(--bg);
+ border-radius: 0.375rem;
+}
+</style>
 </head>
 <body>
   <div class="layout" id="layoutRoot">
@@ -85,7 +91,7 @@
         </div>
 
         <!-- Player -->
-        <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="880" height="495" playsinline></video>
+        <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="880" height="495" playsinline poster="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png"></video>
 
         <!-- MINI SCRUBBER -->
         <div id="scrubberBar" class="scrubber" hidden>
@@ -188,8 +194,8 @@
   <script src="https://unpkg.com/videojs-max-quality-selector/dist/videojs-max-quality-selector.min.js"></script>
 
   <!-- App -->
-<script src="favs-patch.js" defer></script> 
-<script src="./app.js"></script>
+  <script src="favs-patch.js" defer></script> 
+  <script src="./app.js"></script>
 
   <!-- SVG symbols -->
   <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; width:0; height:0; overflow:hidden" aria-hidden="true">

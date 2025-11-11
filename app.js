@@ -1506,3 +1506,17 @@ player.ready(()=>{ setupQualityUI(); buildAudioMenu(); buildCCMenu(); reflectPiP
 
 
 // ===========================================================================
+
+
+// SPX Poster (Option 1) - runtime safety
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    var el = document.getElementById('player');
+    if (el) el.setAttribute('poster','https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png');
+  } catch (e) {};
+
+  try {
+    var p = (window.player) ? window.player : (window.videojs ? videojs('player') : null);
+    if (p && typeof p.poster === 'function') p.poster('https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png');
+  } catch (e) {};
+});
