@@ -59,7 +59,7 @@ function ensureOverlay(){
     layer.innerHTML = `
       <iframe id="playerOverlayFrame" title="Overlay" referrerpolicy="no-referrer"
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-      <button id="playerOverlayClose" type="button" title="Fermer l’overlay">✕ Fermer</button>
+      <button id="playerOverlayClose" type="button" title="Fermer l’overlay" style="visibility: hidden;">✕ Fermer</button>
     `;
 
     el.appendChild(layer);
