@@ -912,3 +912,16 @@ details[open] .summary .caret{transform:rotate(90deg)}
   background-position: center !important;
   background-color: #0b1020 !important;
 }
+#btnToggleControlBar {
+  border: 1px solid var(--muted);
+  background: #0e1430;
+  color: var(--fg);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+#btnToggleControlBar:hover {
+  border-color: var(--accent);
+  background: #1a2550;
+}
