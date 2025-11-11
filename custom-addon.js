@@ -2,7 +2,7 @@
   // Configuration initiale: à éditer par l'utilisateur
   window.CUSTOM_LIST = window.CUSTOM_LIST || [
     { title: "R.Alfa",  logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Radio_Alfa.png", type: "overlay", url: "https://vsalema.github.io/radio-alfa-4/" },
-    { title: "TF1",  logo: "https://upload.wikimedia.org/wikipedia/commons/4/46/TF1_logo_2006.svg", type: "overlay", url: "https://tv.free.fr/home/channels/536/play" },
+    { title: "TF1",  logo: "https://assets-fr.imgfoot.com/media/cache/150x150/tf1-671bb354bb372.png", type: "overlay", url: "https://tv.free.fr/home/channels/536/play" },
     { title: "CMTV",  logo: "https://cdn.brandfetch.io/idaBgpGjjj/w/446/h/223/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/player.php?stream=CMTVPT" },
     { title: "Sport tv 1",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT1" },
     { title: "Sport tv 2",  logo: "https://cdn.brandfetch.io/idKvjRibkN/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/go.php?stream=SPT2" },
