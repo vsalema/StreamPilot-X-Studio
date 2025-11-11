@@ -931,4 +931,5 @@ details[open] .summary .caret{transform:rotate(90deg)}
   border-color: var(--accent);
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 60%, transparent);
 }
+#customList { overflow: auto; scroll-padding: 8px; }
 
