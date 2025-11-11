@@ -1520,3 +1520,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (p && typeof p.poster === 'function') p.poster('https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png');
   } catch (e) {};
 });
+// === Toggle ControlBar (Safe & Non Intrusif) ==============================
+(function () {
+    const btn = document.getElementById("btnToggleControlBar");
+    const bar = document.getElementById("controlBar");
+
+    if (!btn || !bar) return;
+
+    let isHidden = false; // visible par défaut
+
+    const apply = () => {
+        bar.style.display = isHidden ? "none" : "flex";
+        btn.textContent = isHidden
+            ? "🎛️ 👁️"
+            : "🎛️ 🚫";
+    };
+
+    btn.addEventListener("click", () => {
+        isHidden = !isHidden;
+        apply();
+    });
+
+    apply(); // initialise l’état UI
+})();
