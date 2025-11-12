@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "StreamPilot-X-Studio",
+  "short_name": "StreamPilot-X",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
