@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <LINK REL="SHORTCUT ICON" HREF="/favicon.ico">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/web-app-manifest-192x192.png" />
-  <link rel="icon" type="image/svg+xml" href="/web-app-manifest-512x512.png" />
-  <link rel="icon" type="image/svg+xml" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/svg+xml" href="/site.webmanifest" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <title>StreamPilot X</title>
   <link href="https://vsalema.github.io/tvpt4/css/fileLabel.css" rel="stylesheet" />
   <link href="https://unpkg.com/video.js@8/dist/video-js.css" rel="stylesheet" />
@@ -89,7 +87,7 @@
     <!-- MAIN -->
     <div>
       <div class="wrap">
-        <div class="card" style="margin-bottom:16px">
+        <div class="card" style="margin-bottom:16px" id="panelCard">
           <div class="row">
             <input id="srcInput" type="url" placeholder="Collez une URL .m3u8, .mpd, .mp4, .mp3, .m3u ou YouTube" />
             <button id="btnLoad" type="button">Charger</button>
@@ -102,14 +100,9 @@
         </div>
 
         <!-- Player -->
-        <div class="video-container">
         <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="880" height="495" playsinline poster="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png"></video>
-      <span class="overlay">
-    <div id="creditChip" class="interactive" role="contentinfo" aria-label="Crédits du projet">
-  <span class="credit-text">Conçu & réalisé par <strong>V. Salema</strong> — StreamPilot X Studio</span>
-</div>
-</span>
-</div>
+
+        <!-- MINI SCRUBBER -->
         <div id="scrubberBar" class="scrubber" hidden>
           <button id="seekBack" type="button" aria-label="Reculer de 15s">⟲ 15s</button>
           <div class="track">
@@ -210,7 +203,8 @@
   <script src="https://unpkg.com/videojs-max-quality-selector/dist/videojs-max-quality-selector.min.js"></script>
 
   <!-- App -->
-  <script src="./favs-patch.js" defer></script> 
+  <script src="chips.js" defer></script>
+  <script src="favs-patch.js" defer></script> 
   <script src="./app.js"></script>
 
   <!-- SVG symbols -->
@@ -264,5 +258,8 @@
   </svg>
   <script src="./custom-addon.js"></script>
      <script src="./customlist-nav.js"></script>
+<div id="creditChip" class="interactive" role="contentinfo" aria-label="Crédits du projet">
+  <span class="credit-text">Conçu & réalisé par <strong>V. Salema</strong> — StreamPilot X Studio</span>
+</div>
 </body>
 </html>
