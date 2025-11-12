@@ -945,7 +945,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
 
 .video-container .overlay {
   position: absolute;
-  top: 68%;
+  top: 70%;
   left: 18%;
   transform: translate(-50%, -50%);
   display: inline-flex;
