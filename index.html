@@ -100,9 +100,14 @@
         </div>
 
         <!-- Player -->
+        <div class="video-container">
         <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="880" height="495" playsinline poster="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3520b7ed7bb25985.png"></video>
-
-        <!-- MINI SCRUBBER -->
+      <span class="overlay">
+    <div id="creditChip" class="interactive" role="contentinfo" aria-label="Crédits du projet">
+  <span class="credit-text">Conçu & réalisé par <strong>V. Salema</strong> — StreamPilot X Studio</span>
+</div>
+</span>
+</div>
         <div id="scrubberBar" class="scrubber" hidden>
           <button id="seekBack" type="button" aria-label="Reculer de 15s">⟲ 15s</button>
           <div class="track">
@@ -257,8 +262,5 @@
   </svg>
   <script src="./custom-addon.js"></script>
      <script src="./customlist-nav.js"></script>
-<div id="creditChip" class="interactive" role="contentinfo" aria-label="Crédits du projet">
-  <span class="credit-text">Conçu & réalisé par <strong>V. Salema</strong> — StreamPilot X Studio</span>
-</div>
 </body>
 </html>
