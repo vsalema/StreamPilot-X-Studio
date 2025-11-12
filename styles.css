@@ -611,7 +611,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
 .layout.card-open .card{
   display: block;
   position: fixed;
-  top: calc(env(safe-area-inset-top, 10px) + 56px);
+  top: calc(env(safe-area-inset-top, 10px) + 6px);
   right: env(safe-area-inset-right, 10px);
   width: min(81.7%, 92vw);
   max-height: min(72vh, 80svh);
