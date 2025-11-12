@@ -932,4 +932,30 @@ details[open] .summary .caret{transform:rotate(90deg)}
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 60%, transparent);
 }
 #customList { overflow: auto; scroll-padding: 8px; }
+.video-container {
+  position: relative;
+  display: inline-block; /* ou block selon ton layout */
+}
+
+.video-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.video-container .overlay {
+  position: absolute;
+  top: 68%;
+  left: 11%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container .overlay img {
+  width: 120px; /* ajustable selon ton besoin */
+  height: auto;
+  pointer-events: none; /* pour ne pas bloquer les clics sur la vidéo */
+}
 
