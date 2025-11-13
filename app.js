@@ -531,6 +531,10 @@ if (label === 'Dreamworks') {
 if (label === 'Studio-ghibli') {
     btn.classList.add('btn-popout', 'btn-ghibli', 'no-text');
 } 
+if (label === 'Superhero') {
+  btn.classList.add('btn-popout', 'btn-superhero', 'no-text');
+  btn.title = "Superhero – Films de super-héros";
+}
 
 if (label === 'Superhero') {
   btn.classList.add('btn-popout', 'btn-superhero', 'no-text');
@@ -1590,3 +1594,11 @@ player.ready(()=>{ setupQualityUI(); buildAudioMenu(); buildCCMenu(); reflectPiP
 
     apply(); // initialise l’état UI
 })();
+
+const btnRefresh = document.getElementById('btnRefreshPlaylist');
+if (btnRefresh) {
+  btnRefresh.addEventListener('click', () => {
+    window.location.reload();
+  });
+}
+

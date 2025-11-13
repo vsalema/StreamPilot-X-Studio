@@ -140,7 +140,15 @@ button:hover { filter: brightness(1.06); }
 
 .favFilter{background:#243266;border:1px solid #3a4ba0;border-radius:10px;padding:8px 12px;font-weight:600;cursor:pointer}
 .favFilter.active{background:#3a4ba0}
-
+/* Variante icône seule pour le refresh */
+.favFilter.fav-icon{
+  padding: 8px;
+  width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
 details.group-panel{ background:#0c1433; border:1px solid #132259; border-radius:10px; padding:6px 8px; }
 details.group-panel[open] .summary{ border-bottom:1px dashed #1f2a4c; margin-bottom:6px; padding-bottom:6px; }
 .summary{ list-style:none; display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer; user-select:none; font-size:12px; text-transform:uppercase; letter-spacing:.04em; opacity:.85; }

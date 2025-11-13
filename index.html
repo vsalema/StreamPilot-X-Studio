@@ -31,16 +31,25 @@
     <aside id="playlistAside" aria-label="Playlist M3U">
       <div class="brand"></div>
       <div class="aside-row">
-        <button id="btnFavOnly" class="favFilter" type="button" title="Afficher uniquement les favoris">⭐ Favoris</button>
-        <div class="controls">
-          <label class="fileLabel" style="font-size: 12px;">
-            <input type="file" id="fileInput" accept=".m3u,.m3u8">
-            Importer fichier M3U
-          </label>
-        </div>
-        <button id="btnCheckLinks" class="favFilter" type="button" title="Vérifier l’accessibilité des liens">🔍 Vérifier liens</button><img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_7c940b1621b45f87.png"
-       alt="StreamPilot X" style="width: 6em;height: 1.7em;display:inline-block;vertical-align: middle;object-fit: contain;">
-      </div>
+  <!-- Texte raccourci : Favoris -> Fav -->
+  <button id="btnFavOnly" class="favFilter" type="button" title="Afficher uniquement les favoris">⭐ Fav</button>
+
+  <div class="controls">
+    <label class="fileLabel" style="font-size: 12px;">
+      <input type="file" id="fileInput" accept=".m3u,.m3u8">
+      Importer M3U
+    </label>
+  </div>
+
+  <!-- 🔄 Nouveau bouton refresh (picto seul) -->
+  <button id="btnRefreshPlaylist" class="favFilter fav-icon" type="button" title="Rafraîchir la playlist">⟳</button>
+
+  <button id="btnCheckLinks" class="favFilter" type="button" title="Vérifier l’accessibilité des liens">🔍 Vérifier liens</button>
+
+  <img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_7c940b1621b45f87.png"
+       alt="StreamPilot X" 
+  style="width: 7.1em; height: 2.7em;display:inline-block;vertical-align: middle;object-fit: contain;">
+  </div>
 
       <div id="verifySummary" class="verify-summary" style="display:none">
         <span class="pill"><span class="dot ok"></span> <span id="okCount">0</span> OK</span>
