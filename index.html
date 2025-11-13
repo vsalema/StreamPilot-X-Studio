@@ -97,10 +97,17 @@
     <div>
       <div class="wrap">
         <div class="card" style="margin-bottom:16px" id="panelCard">
-          <div class="row">
-            <input id="srcInput" type="url" placeholder="Collez une URL .m3u8, .mpd, .mp4, .mp3, .m3u ou YouTube" />
-            <button id="btnLoad" type="button">Charger</button>
-          </div>
+  <div class="row url-row">
+    <div class="url-wrap">
+      <input id="srcInput" type="url"
+             placeholder="Collez une URL .m3u8, .mpd, .mp4, .mp3, .m3u ou YouTube" />
+      <button id="btnLoad"
+              type="button"
+              class="url-btn"
+              aria-label="Charger l’URL">⏵</button>
+    </div>
+  </div>
+
           <details id="examplesDetails"><summary>☰menu chaines</summary>
             <div class="hint"> 
               <span class="grid" id="examples"></span>

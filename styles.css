@@ -925,3 +925,48 @@ details[open] .summary .caret{transform:rotate(90deg)}
   /* ou var(--bg) si tu veux le même que le fond global */
 }
 
+/* === Barre URL avec bouton intégré (desktop + mobile) === */
+
+/* On garde la grille générale, mais pour cette row = 1 colonne */
+.row.url-row {
+  grid-template-columns: 1fr;
+}
+
+/* Wrapper centré qui contient input + bouton */
+.url-wrap {
+  position: relative;
+  max-width: 520px;     /* largeur max desktop */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Input plein dans le wrapper, avec place pour le bouton */
+.url-wrap #srcInput {
+  width: 100%;
+  padding-right: 48px;  /* espace pour le bouton ⏵ */
+}
+
+/* Bouton "Charger" collé à l'intérieur, côté droit */
+.url-wrap .url-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:#243266;
+  border:1px solid #3a4ba0;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:13px;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* Version mobile : input un peu plus court, mais toujours centré */
+@media (max-width: 430px){
+  .url-wrap {
+    max-width: 320px;   /* tu peux descendre à 280px si besoin */
+  }
+}
