@@ -1,4 +1,3 @@
-
 // (old per-list clearing removed)
 /* Extracted from inline <script> */
 
@@ -1306,34 +1305,50 @@ player.ready(()=>{ setupQualityUI(); buildAudioMenu(); buildCCMenu(); reflectPiP
 
 
 // === Toggle panneau CARD (surcouche au player) ================================
+// → fermeture auto quand un bouton est cliqué dans panelCard
 (function(){
   const layout = document.getElementById('layoutRoot') || document.body;
   const btn = document.getElementById('btnCardToggle');
-  const card = document.querySelector('.card');
+  const card = document.getElementById('panelCard');
   if (!btn || !card) return;
+
   const setState = (open) => {
     btn.setAttribute('aria-expanded', String(open));
     layout.classList.toggle('card-open', open);
     // Focus ergonomique
     if (open) {
       const firstInput = card.querySelector('input, button, select, textarea');
-      if (firstInput) try { firstInput.focus({preventScroll:true}); } catch(e){}
+      if (firstInput) {
+        try { firstInput.focus({ preventScroll:true }); } catch(e){}
+      }
     }
   };
+
   btn.addEventListener('click', () => {
     const open = btn.getAttribute('aria-expanded') !== 'true';
     setState(open);
   });
+
+  // Fermeture auto sur clic d’un bouton interne
+  card.addEventListener('click', (e) => {
+    const innerBtn = e.target.closest('button');
+    if (!innerBtn) return;
+    window.requestAnimationFrame(() => {
+      setState(false);
+    });
+  });
+
   // Fermeture via Échap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
       setState(false);
     }
   });
-  // Fermer si on passe en plein écran page entière (optionnel)
-  const btnExpandFull = document.getElementById('btnExpandFull');
-  if (btnExpandFull){
-    btnExpandFull.addEventListener('click', ()=> setState(false));
+
+  // Fermer si on passe en plein écran page entière
+  const btnExpandFullLocal = document.getElementById('btnExpandFull');
+  if (btnExpandFullLocal){
+    btnExpandFullLocal.addEventListener('click', ()=> setState(false));
   }
 })();
 

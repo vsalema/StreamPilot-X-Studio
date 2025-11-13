@@ -619,7 +619,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
   z-index: 120;
   box-shadow: 0 10px 30px rgba(0,0,0,.45);
   border: 1px solid var(--border);
-  background: #121a335e;
+  background: #121a33;
 }
 
 /* En très petit écran, la card prend toute la largeur pour rester utilisable */
