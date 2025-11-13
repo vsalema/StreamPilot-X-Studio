@@ -277,7 +277,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
 .bar-right .tool + .tool,
 .bar-right .tool + button,
 .bar-right button + .tool,
-.bar-right button + button{ margin-left:6px; }
+.bar-right button + button{ margin-left: 6px; }
 
 /* Styles des boutons */
 #btnQuality, #btnAudio, #btnCC, #btnPiP, #btnFS, #btnExpandAside, #btnExpandFull{
@@ -527,7 +527,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
   /* La grille: card (min), player (flex), controlbar (min) */
   .wrap{
     grid-template-rows: min-content minmax(120px, 1fr) min-content;
-    overflow: auto;                     /* au lieu de hidden en paysage bas */
+    overflow: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
@@ -553,21 +553,17 @@ details[open] .summary .caret{transform:rotate(90deg)}
 
   /* Rendre le player flexible: pas de hauteur forcée, respecter 16:9 */
   #player.video-js{
-    height: auto !important;          /* casse la hauteur fixe 100% */
-    max-height: 100%;                 /* ne dépasse pas la rangée 1fr */
-    aspect-ratio: 16 / 9;             /* conserve les proportions */
+    height: auto !important;
+    max-height: 100%;
+    aspect-ratio: 16 / 9;
   }
 }
-
-/* 3) Déjà prévu: la controlbar redevient "statique" quand la hauteur est basse.
-   Ce bloc existe plus haut. On le laisse tel quel.
-   @media (max-height: 440px){ .bar-center{ position: static; ... } } */
 
 /* === Custom list toggle and items (addon) === */
 #btnToggleCustomList{
   border: 1px solid var(--muted);
   background: #0e1430;
-  color: var(--fg);
+  color: #e6e8ef;
   border-radius: 8px;
   padding: 6px 10px;
   font-size: 13px;
@@ -633,7 +629,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
 
 /* Assurer que le player reste à sa place et occupe l’espace libéré */
 .wrap{
-  grid-template-rows: 1fr auto auto; /* player 1fr; scrubber + controlbar auto */
+  grid-template-rows: 1fr auto auto;
 }
 
 
@@ -681,34 +677,27 @@ details[open] .summary .caret{transform:rotate(90deg)}
   opacity: var(--credit-opacity);
   -webkit-backdrop-filter: blur(var(--credit-blur));
   backdrop-filter: blur(var(--credit-blur));
-  pointer-events: none; /* ne bloque aucun bouton ni la liste */
+  pointer-events: none;
 }
 
 #creditChip .credit-text{ white-space: nowrap; }
 
 /* ————— Auto-décalage quand l’aside est visible ————— */
-
-/* Desktop (≥960px) : aside colonne fixe = 280px → on pousse le chip après l’aside */
 @media (min-width: 960px){
-  /* Quand l’aside est affichée (layout normal) */
   .layout:not(.fullpage) #creditChip{
     left: calc(280px + 10px + env(safe-area-inset-left, 0px));
   }
-  /* Quand tu passes en “plein page” (aside masqué) on revient au bord gauche */
   .layout.fullpage #creditChip{
     left: calc(10px + env(safe-area-inset-left, 0px));
   }
 }
 
-/* Mobile (<960px) : aside en overlay = min(82vw, 360px). 
-   Si aside ouverte, on décale pour rester visible. */
 @media (max-width: 960px){
   .layout.aside-open #creditChip{
     left: calc(min(82vw, 360px) + 10px + env(safe-area-inset-left, 0px));
   }
 }
 
-/* Option : compacter légèrement en très petit écran */
 @media (max-width: 430px){
   #creditChip{
     --credit-font-size: 11px;
@@ -720,20 +709,17 @@ details[open] .summary .caret{transform:rotate(90deg)}
 
 /* ===================== Credit Chip – Modern Gradient + Hover ===================== */
 :root{
-  /* Tu peux ajuster la “pulse” visuelle ici */
-  --credit-grad-1: #3a4ba0;  /* bleu profond (cohérent avec tes boutons) */
-  --credit-grad-2: #6b5dd6;  /* violet/indigo doux */
-  --credit-grad-3: #2aa1ff;  /* accent clair */
+  --credit-grad-1: #3a4ba0;
+  --credit-grad-2: #6b5dd6;
+  --credit-grad-3: #2aa1ff;
   --credit-glow: rgba(42, 161, 255, .22);
 }
 
-/* Mode interactif = hover/focus actifs */
 #creditChip.interactive{
-  pointer-events: auto;                 /* autorise le survol sur la zone du chip */
+  pointer-events: auto;
   cursor: default;
 }
 
-/* Dégradé moderne de base (subtil, non flashy) */
 #creditChip{
   background:
     linear-gradient(135deg, color-mix(in oklab, var(--bg) 82%, transparent) 0%,
@@ -746,7 +732,6 @@ details[open] .summary .caret{transform:rotate(90deg)}
     0 0 0 1px rgba(255,255,255,.04) inset;
 }
 
-/* Reflet “sheen” au survol : pseudo-élément qui glisse en diagonale */
 #creditChip.interactive::after{
   content:"";
   position:absolute;
@@ -763,7 +748,6 @@ details[open] .summary .caret{transform:rotate(90deg)}
   transform: translateX(-30%) skewX(-12deg);
 }
 
-/* Transition douce pour tout (respect du prefers-reduced-motion) */
 @media (prefers-reduced-motion: no-preference){
   #creditChip.interactive{
     transition:
@@ -778,14 +762,12 @@ details[open] .summary .caret{transform:rotate(90deg)}
   }
 }
 
-/* Hover/focus : micro-lift + glow léger + reflet qui défile */
 #creditChip.interactive:hover,
 #creditChip.interactive:focus{
   transform: translateY(-2px);
   box-shadow:
     0 8px 28px var(--credit-glow),
     0 0 0 1px rgba(255,255,255,.06) inset;
-  /* Déplace légèrement le dégradé pour un effet vivant */
   background-position: 0 0, 12% 50%;
 }
 
@@ -795,15 +777,13 @@ details[open] .summary .caret{transform:rotate(90deg)}
   transform: translateX(55%) skewX(-12deg);
 }
 
-/* Micro-typo: légère atténuation par défaut, lisibilité en hover */
 #creditChip .credit-text{ opacity:.92 }
 #creditChip.interactive:hover .credit-text,
 #creditChip.interactive:focus .credit-text{ opacity:1 }
 
-/* Mobile: on garde discret, animation minimale, aucun impact de layout */
 @media (max-width:430px){
   #creditChip.interactive{
-    transform: none; /* pas de lift en très petit écran */
+    transform: none;
   }
   #creditChip.interactive:hover::after,
   #creditChip.interactive:focus::after{
@@ -811,7 +791,7 @@ details[open] .summary .caret{transform:rotate(90deg)}
     transform: translateX(40%) skewX(-12deg);
   }
 }
-/* Drag & Drop pour le Credit Chip */
+
 #creditChip.interactive{
   cursor: grab;
   user-select: none;
@@ -819,16 +799,15 @@ details[open] .summary .caret{transform:rotate(90deg)}
 #creditChip.interactive.is-dragging{
   cursor: grabbing;
 }
+
 /* === Splash de marque dans le player (sans poster) ===================== */
-/* Chemin modifiable: relatif ou absolu. Prends par ex. ./assets/logo-splash.png */
 :root{
   --player-splash-url: url("");
   --player-splash-bg: radial-gradient(60% 60% at 50% 50%, #111a3a 0%, #0b1020 60%, #0b1020 100%);
 }
 
-#player.video-js{ position: relative; } /* (déjà positionné, on sécurise) */
+#player.video-js{ position: relative; }
 
-/* Affiché tant que la classe 'has-splash' est présente */
 #player.video-js.has-splash::before{
   content: "";
   position: absolute;
@@ -838,15 +817,13 @@ details[open] .summary .caret{transform:rotate(90deg)}
     var(--player-splash-url) center / min(66%, 380px) no-repeat;
   opacity: .96;
   transition: opacity .25s ease;
-  pointer-events: none;   /* ne bloque aucun clic (dont big play) */
-  z-index: 1;             /* sous le bouton Play (qui est au-dessus) */
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Dès que la lecture a commencé, on fade-out le splash */
 #player.video-js.vjs-has-started::before{
   opacity: 0;
 }
-
 
 /* SPX Poster (Option 1) */
 .video-js .vjs-poster{
@@ -854,3 +831,89 @@ details[open] .summary .caret{transform:rotate(90deg)}
   background-position: center !important;
   background-color: #0b1020 !important;
 }
+
+/* =========================
+   BOUTONS POSTERS + ZOOM
+   ========================= */
+
+/* Le panneau qui contient les boutons (panelCard) doit laisser sortir le zoom */
+#panelCard {
+  overflow: visible !important;
+}
+
+/* Boutons "posters" générés dans #examples */
+#examples .btn-popout {
+  position: relative;
+  z-index: 1;
+  overflow: visible !important;
+  display: inline-block;
+
+  width: 120px;
+  height: 70px;
+  border-radius: 10px;
+  background: none !important;
+}
+
+/* Calque image générique pour tous les boutons posters */
+#examples .btn-popout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+
+  transform: scale(1);
+  transform-origin: center center;
+  transition:
+    transform 0.35s ease-out,
+    box-shadow 0.35s ease-out,
+    filter 0.35s ease-out;
+  pointer-events: none;
+}
+
+/* Zoom propre au survol (pop-out) */
+#examples .btn-popout:hover::before {
+  transform: scale(1.35);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.55);
+  filter: brightness(1.08) saturate(1.08);
+}
+
+/* Masque le texte dans les boutons images (mais garde le title/tooltip) */
+#examples .btn-popout.no-text {
+  color: transparent !important;
+  text-shadow: none !important;
+  font-size: 0 !important;
+}
+
+/* IMAGES PAR BOUTONS */
+#examples .btn-disney-pixar::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_61ec6d455c39eea5.png");
+}
+
+#examples .btn-dreamworks::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_f987caf752a63761.png");
+}
+
+#examples .btn-ghibli::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_a530fb4ef0f4b11d.png");
+}
+
+#examples .btn-superhero::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_8211112f0180a79d.png");
+}
+
+#examples .btn-Ancien-Film::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_137b5a83f48addc1.png");
+}
+#examples .btn-Tous-les-film::before {
+  background-image: url("https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_f7f8a8efe24ee699.png");
+}
+
+#examples .btn-popout::before {
+  background-color: transparent;
+  /* ou var(--bg) si tu veux le même que le fond global */
+}
+

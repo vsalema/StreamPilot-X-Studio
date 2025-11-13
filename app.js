@@ -494,6 +494,18 @@ const overlayLinks = [
   { label: 'Dreamworks',url: 'https://vsalema.github.io/Dreamworks/' },
   { label: 'Disney-pixar',   url: 'https://vsalema.github.io/Disney-pixar/' }
 ];
+
+const overlayTitles = {
+    "Disney-pixar": "Disney & Pixar – Films et Animations",
+    "Dreamworks": "DreamWorks Animation – Films et séries",
+    "Studio-ghibli": "Studio Ghibli – Collection complète",
+    "Superhero": "Films de super-héros",
+    "Ancien-Film": "Films classiques et rétro",
+    "Tous-les-film": "Collection générale",
+    "TVPT4": "Plateforme TVPT4"
+};
+
+
 (function addOverlayButtons(){
   const ex = document.getElementById('examples');
   if (!ex) return;
@@ -501,12 +513,39 @@ const overlayLinks = [
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = label;
-    btn.style.background = '#263572';
+    btn.title = overlayTitles[label] || label;
+    btn.style.backgroundColor = '#263572';
     btn.style.padding = '8px 10px';
     btn.style.borderRadius = '10px';
     btn.style.fontSize = '12px';
     btn.style.margin = '5px';
-    btn.addEventListener('click', () => {
+
+if (label === 'Disney-pixar') {
+    btn.classList.add('btn-popout', 'btn-disney-pixar', 'no-text');
+}    
+
+if (label === 'Dreamworks') {
+    btn.classList.add('btn-popout', 'btn-dreamworks', 'no-text');
+} 
+
+if (label === 'Studio-ghibli') {
+    btn.classList.add('btn-popout', 'btn-ghibli', 'no-text');
+} 
+
+if (label === 'Superhero') {
+  btn.classList.add('btn-popout', 'btn-superhero', 'no-text');
+  btn.title = "Superhero – Films de super-héros";
+}
+
+if (label === 'Ancien-Film') {
+    btn.classList.add('btn-popout', 'btn-Ancien-Film', 'no-text');
+}
+if (label === 'Tous-les-film') {
+    btn.classList.add('btn-popout', 'btn-Tous-les-film', 'no-text');
+}
+
+
+     btn.addEventListener('click', () => {
       pauseAllPlayers();
       overlay.open(url);
       const det = document.getElementById('examplesDetails');
